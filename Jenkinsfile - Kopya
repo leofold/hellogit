@@ -1,0 +1,15 @@
+pipeline {
+    tools {
+        maven 'Maven 3.8.3'
+    }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                dir('/home/Documents/GitHub/hellojenki') {
+                    sh 'mvn clean install'
+                }
+            }
+        }
+    }
+}
